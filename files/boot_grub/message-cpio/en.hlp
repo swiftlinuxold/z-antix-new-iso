@@ -1,0 +1,241 @@
+optMain MenuWELCOME to Swift Linux: the user-friendly Linux distro that combines user-friendliness, swift performance, and a HUGE software repository
+
+Passwords
+   The demo user password is 'demo'.
+   The root password is 'root'.
+
+mm_infoSwiftLinuxantiXLinuxandMepisLinuxInfo
+helpUsingtheHelpSystem
+mm_langLanguageandKeyboardLayoutSelection
+mm_tzChoosingaTimezone
+mm_resChoosingaScreenResolution
+bo_instructBootOptionInstructions
+mm_bootBootOptions
+mm_antixSwift LinuxBootOptions
+ax_alt_bootSwift LinuxAlternateBootOptions
+ax_debugSwift LinuxDebugOptions
+
+Press ESC to leave the Help MenuhelpUsing the Help SystemThe boot loader online help is context sensitive. It gives information about the selected menu item or, if you are editing boot options, it tries to look up information about the option in which the cursor is positioned.
+
+Navigation Keys
+
+Up Arrow: highlight previous link
+Down Arrow: highlight next link
+Left Arrow, Backspace: return to previous topic
+Right Arrow, Enter, Space: follow link
+Page Up: scroll up one page
+Page Down: scroll down one page
+Home: go to page start
+End: go to page end
+Esc: leave help
+
+Return to the optMainMenumm_langLanguage and Keyboard Layout SelectionPress F2 to change the boot loader's language and keyboard layout .
+
+Return to the optMainMenumm_tzChoosing a TimezonePress F3 to select your timezone. Your system will be started using the timezone selected.
+
+Return to the optMainMenumm_resChoosing a Screen resolution
+Swift Linux will attempt to auto-detect your proper display settings. Depending on your video card and your monitor the auto-detection may not properly detect your screen resolution. In these cases the Auto Res will default to a 1024x768 screen resolution. To use a specific resolution manually add it to the menu using xres=xxxx
+
+Return to the optMainMenumm_bootBoot OptionsSelect a Boot Option to learn more about it.
+
+bo_acpiACPI -- Advanced Configuration and Power Interface
+bo_DebugDebug -- try these hints if the CD doesn't boot
+bo_failsafefailsafe -- boot very little hardware detection
+bo_ideIDEDMA -- enable/disable DMA for IDE-Drives
+bo_langLanguage -- specify language and keyboard layout
+bo_memtestMemtest -- run the memtest86 utility
+bo_modesetnomodeset -- don't load video drivers
+bo_modesetnouveau.modeset=0 -- don't load nouveau driver
+bo_nonoxxx -- skip detection of specific hardware
+bo_pciPCI -- options for non-working PS2 mice and bad PCI controllers
+bo_1Runlevel -- boot to an alternate run mode
+bo_vgavga -- set a display resolution for before the X Window System runs
+bo_screenxres -- set a display resolution for the X Window System
+bo_xmoduledrvr/xdrvr -- set a display driver for the X Window System
+
+Return to the optMainMenubo_instructBoot Option InstructionsThere are many boot options available.  They are usually only necessary if your system will not boot properly. To use the boot options just place the appropriate code in the Boot Options box at the bottom of the main screen.  You may also need to edit or delete options that are already in the Boot Options box.
+
+You can't make changes permanent on a LiveCD or a LiveDVD.  You have to enter them each time you boot.  You can make permanent changes on some LiveUSBs.
+
+
+Return to optMainMenubo_modesetnomodeset and nouveau.modeset=0 optionsNewer Linux kernels have moved video mode setting into the kernel so video cards get set up (mode set) at boot time.  This can cause conflicts.  The nomodeset boot parameter was born to turn this behavior off.  Most of the conflicts have to do with drivers for Nvidia graphics cards and chips.
+
+There are currently three different drivers for Nvidia cards:
+  nv an older open-source driver that lacks some features.
+  nouveau a newer open-source driver.
+  nvidia a proprietary driver that has the most features.
+
+Only the nouveau driver uses the new modeset feature.  This means that if it is on your system then it will get enabled automatically and prevent you from using any other video driver.  Unfortunately, it doesn't work with every Nvidia card so it is provided but the default driver is nv.  In order for the nv driver to work, the nomodeset (or nouveau.modeset=0) boot parameter is set by default.
+
+If you want to try the nouveau driver instead, you need to get rid of both the nomodeset option and the nouveau.modeset=0 options and add drvr=nouveau.
+
+The proprietary nvidia driver is not distributed on the Swift Linux LiveCD.  You have to install it separately.  You can switch between the nvidia and nv drivers without rebooting but to switch between nouveau and either of the others, you have to reboot in order to change the nomodeset option.  Lovely.
+
+Return to mm_bootBootOptions | bo_xmoduledrvr option | optMainMenumm_infoInformation about antiXhttp://antix.mepis.comInformation about Swift Linuxhttp://www.swiftlinux.org
+
+Swift Linux is distributed as CD or ISO images that contain many quality Linux applications.
+
+Swift Linux is compiled to work with Pentium-class Intel and AMD processors or better. Swift Linux will not work with 386 and 486 class processors. To install Swift Linux on a hard drive, at least 2.0 GB of free space is required and a minimum of 2.5 GB is recommended.
+
+MEPIS requirements.
+
+Commercial reuse of the MEPIS name and logo are prohibited. Linux is a registered trademark of Linus Torvalds.
+
+MEPIS Linux is a publicly available collection of software that contains unmodified publicly available Open Source encryption source code which, together with object code resulting from the compiling of publicly available source code, has been previously cleared for export from the United States under License Exception "TSU" pursuant to EAR Section 740.13(e). Said source code and object code is publicly available at several web sites including ftp://mirror.mcs.anl.gov/pub/
+
+The knowing export or re-export of any cryptographic software and technology to nationals of Cuba, Iran, Iraq, Libya, North Korea and Sudan is prohibited by US Law.
+
+In addition, the knowing export or re-export of strong cryptographic software and technology to nationals of Afghanistan, Armenia, Azerbaijan, Belarus, Burma, China, Cuba, Democratic Republic of Congo, Egypt, Eritrea, Ethiopia, Hungary, Indonesia, Iran, Iraq, Israel, Kazakhstan, Liberia, Libya, Nagorno-Karabakh, North Korea, Pakistan, Russia, Rwanda, Sierra Leone, Somalia, Sudan, Syria, Vietnam and Yemen is prohibited.
+
+This legal export notice applies to cryptographic software only. More detailed information is available at http://www.bxa.doc.gov/
+
+Return to the optMainMenubo_acpiACPIACPI (Advanced Configuration and Power Interface) is a standard that defines power and configuration management interfaces between an operating system and the BIOS. By default, acpi is switched on when boot detects a BIOS newer than the year 2000. There are several commonly used parameters to control the behavior of ACPI:
+
+pci=noacpi -- do not use ACPI to route PCI interrupts
+acpi=off -- turn off ACPI completely
+acpi=force -- turn on ACPI, for pre-2000 BIOS
+
+Return to mm_bootBootOptionsbo_failsafeFailsafeBoot with almost no hardware detection.
+
+failsafe
+
+Return to mm_bootBootOptionsbo_langLanguageSpecify a language/keyboard layout for your keyboard. If available, Swift Linux will set the correct locale for your language.
+
+uk - British
+us - US (default)
+
+Return to mm_bootBootOptionsbo_memtestmemtest86 utilityIf your system doesn't boot, check your system's RAM.
+
+memtest -- utility to check system RAM
+
+Return to mm_bootBootOptionsbo_nonoxxxSkips detection of or enables support for specific hardware.
+
+noauto -- turns off hardware autodetection
+ide=nodma -- turns off bo_ideIDEDMA support
+noparallel -- turns off parallel printer support
+nopcmcia -- turns off PCMCIA support
+nousb -- turns off usb device probing
+nousebios -- enables NoUseBios mode needed for some Savage cards
+smouse -- enables only a serial mouse
+swcursor -- enables sw_cursor mode needed for some ATI and Trident cards
+
+To turn off "almost everything", see bo_failsafefailsafe.
+
+Return to mm_bootBootOptionsbo_pciPCISome PCI options:
+
+pci=irqmask=0x0e98 -- try this if your PS/2 mouse doesn't work
+pci=bios -- workaround for bad PCI controllers
+
+Return to mm_bootBootOptionsbo_1RunlevelBoot in an alternate run mode.
+
+1 -- Runlevel 1, single user mode for debugging
+3 -- Runlevel 3, don't start the X window graphical login
+5 -- Runlevel 5, do start the X window graphical login (default)
+
+Return to mm_bootBootOptionsbo_vgavgaSet the display resolution used before the X Window System starts.
+
+vga=normal -- No framebuffer, but X Window System's built-in buffer
+vga=785 -- 640x480 framebuffer
+vga=788 -- 800x600 framebuffer
+vga=791 -- 1024x768 framebuffer (default)
+vga=794 -- 1280x1024 framebuffer
+
+Return to mm_bootBootOptionsbo_screenxresSets the display resolution for the X Window System.
+
+xres=1280x1024 -- to use a resolution of 1280x1024
+xres=1024x768 -- to use a resolution of 1024x768
+
+Return to mm_bootBootOptionsbo_xmoduledrvr optionIf your display card/chip is not detected automatically, please specify the appropriate display driver for your brand of display card.  Note: xdrvr does the same thing as drvr
+
+drvr=ati -- for ATI only, this is not the ATI proprietary driver
+drvr=fbdev -- very compatible, but very low performance
+drvr=i810 -- for Intel graphics only
+drvr=mga -- for Matrox only
+bo_modesetdrvr=nv -- for NVidia only, this is not the nvidia proprietary driver
+bo_modesetdrvr=nouveau -- another open-source NVidia driver
+drvr=radeon -- for Radeon only
+drvr=savage -- for Savage only
+drvr=s3 -- for SiS only
+drvr=vesa -- low performance, compatible with most video cards
+
+Return to mm_bootBootOptionsmm_antixSwift Linux OptionsThese are options that are only available in Swift Linux
+
+ax_desktopdesktop=dddd -- which desktop to use.
+lean -- disable some services including wicd for a fast boot 
+mean -- disable dhclient (Internet connection) 
+Xtralean -- disable more services for a faster boot
+noRox -- disable Rox desktop (not recommended)
+noxorg -- do not create /etc/X11/xorg.conf
+dpi=XX -- set dpi. Default is 96
+tz -- set timezone. eg tz=Europe/Athens
+kbd -- set keyboard language(s). eg kbd=gr,us
+kbvar -- set keyboard variants. eg intl
+kbopt -- set keyboard options. eg grp:switch,grp:alt_shift_toggle,grp_led:scroll
+
+Return to optMainMenu
+Swift Linux Boot Options | ax_alt_bootAlternateBootOptions | ax_debugDebugOptions
+ax_desktopSwift Linux desktop optionSwift Linux is designed to be used with the IceWM window environment and ROX Pinboard desktop environment.  If you want to use Fluxbox or other window environments, you should use antiX Linux.
+
+Available on stock LiveCD:
+  ROX-icewm
+
+Return to mm_antixSwift LinuxOptions | optMainMenuax_persistSwift Linux Persistence OptionsThese options let you save either the entire file system or the /home file system on a partition or file to save either all your changes or just the changes in your home directory.  The rootfs and homefs options work the same way so only rootfs will be explained in detail.
+
+rootfs=/dev/xxx -- use partition /dev/xxx 
+rootfs=LABEL=yyy -- use partition with label "yyy"
+rootfs=UUID=zzz -- use partition with uuid "zzz"
+homefs=... -- see rootfs choices above
+
+ax_file_persistUse a file as a partition
+ax_create_fileCreate a filesystem on a file
+
+Return to ax_alt_bootAlternateBootOptions | optMainMenuax_file_persistUse a file as a partitionYou can store either the root file system or home file system in a file instead of an entire partition.  Use the fsfs option to specify which partition these files reside on.
+
+fsfs=... -- partition containing root.fs and/or home.fs file.  See ax_persistrootfs for usage.
+
+if fsfs is given then rootfs and homefs can point to a file on the fsfs partition.  Example: rootfs=/boot/root.fs (Note leading "/").
+
+If both fsfs and ax_alt_bootbootdir are given then rootfs and homefs can be used to specify a file in the /boot/$BOOTDIR/ directory on the fsfs partiton.  Example rootfs=my-root.fs (no leading "/").
+
+If fsfs and ax_alt_bootbootdir are given but no rootfs or homefs is given then rootfs defaults to root.fs and homefs defaults to home.fs.
+
+Return to ax_persistPersistenceOptions | ax_alt_bootAlternateBootOptions | optMainMenuax_create_fileCreate a filesystem on a fileJust like you need to create a partition before it can be used, you also have to create a "filesystem on a file" before it can be used.  Here is how to create a 500 Meg file called root.fs containing an ext2 filesystem:
+
+  # dd if=/dev/zero bs=1048576 count=500 of=root.fs
+  # mkfs.ext2 -F root.fs
+
+
+Return to ax_persistPersistenceOptions | mm_antixSwift LinuxOptions | optMainMenuax_alt_bootSwift Linux Alternate Boot OptionsThese options allow you to customize how Swift Linux boots.  They are typically used when you create your own custom LiveUSB or custom LiveCD.
+
+fromhd=/dev/... -- Look for iso file on this device
+fromiso=file -- Name of iso file to boot from
+
+toram -- Load everything into RAM at boot-time.  Runs faster but takes longer to boot.
+
+bootdir=$VERSION -- look for squashfs file at /boot/$VERSION/squashfs instead of /antiX/antiX
+
+ax_persistSwift Linux Persistence Options
+
+Return to optMainMenu
+mm_antixSwift LinuxBootOptions | Alternate Boot Options | ax_debugDebugOptions ax_debugSwift Linux Debug OptionsThese options help you debug/fix the boot process.
+
+rootdelay=N -- wait N seconds before booting. 
+wait=N -- wait N seconds after booting, before init. 
+verbose=N -- print more (10) or less (0) while booting.  Default is 5.
+nocolor -- display boot messages in black and white
+dark -- display boot messages in darker colors
+
+Note: if you are able to successfully boot, a record of the boot process is stored in /var/log/linuxrc.log.  Use "cat /var/log/linuxrc.log" to see the contents.
+
+Return to optMainMenu
+mm_antixSwift LinuxBootOptions | ax_alt_bootAlternateBootOptions | Debug Optionsbo_idenodmaTo mitigate some hardware problems that occur with IDE hard drives, try this kernel parameter:
+
+ide=nodma -- switch off dma for IDE drives
+
+Return to mm_bootBootOptionsbo_DebugDebug optionsSometimes the bootable CD doesn't work exactly as expected. Here are a few options that may help:
+
+failsafe -- use conservative settings for most options
+vga=normal -- sets screen resolution to 640x480 during boot, disables boot splash screen
+drvr=vesa -- a display driver compatible with most video cards, don't auto-detect
+
+Return to mm_bootBootOptions.

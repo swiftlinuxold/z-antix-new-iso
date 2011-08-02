@@ -1,0 +1,6 @@
+This repository contains the files for the new-iso directory during the remastering process.
+
+These files are used in the live CD.
+
+Instructions on how to work with CPIO archive files are in 
+http://www.thegeekstuff.com/2010/08/cpio-utility/ .
