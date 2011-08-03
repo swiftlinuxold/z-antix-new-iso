@@ -2,5 +2,7 @@ This repository contains the files for the new-iso directory during the remaster
 
 These files are used in the live CD.
 
-Instructions on how to work with CPIO archive files are in 
-http://www.thegeekstuff.com/2010/08/cpio-utility/ .
+There is NO main.sh file in this repository.  The files in this repository are only accessed during the remastering process.
+
+More on the message file that is a CPIO archive:
+http://www.mepis.org/docs/en/index.php?title=Cpio
